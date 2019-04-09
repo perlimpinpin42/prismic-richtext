@@ -13,7 +13,7 @@ if (yargs.argv.p) {
   outputFile = fileName + ".min.js";
   mode = "production";
   optimization = {
-    minimize: true,
+    minimize: true
   };
 } else {
   outputFile = fileName + ".js";
@@ -29,6 +29,7 @@ var config = {
     library: libraryName,
     libraryTarget: "umd",
     umdNamedDefine: true,
+    globalObject: "typeof self !== 'undefined' ? self : this"##
   },
   module: {
     rules: [
@@ -41,19 +42,19 @@ var config = {
             [
               "@babel/plugin-transform-modules-commonjs",
               {
-                allowTopLevelThis: true,
-              },
+                allowTopLevelThis: true
+              }
             ],
-            "ramda",
-          ],
-        },
-      },
-    ],
+            "ramda"
+          ]
+        }
+      }
+    ]
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".js"]
   },
-  plugins: plugins,
+  plugins: plugins
 };
 
 module.exports = config;
