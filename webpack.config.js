@@ -1,5 +1,3 @@
-require("@babel/polyfill");
-
 var webpack = require("webpack"),
   path = require("path"),
   yargs = require("yargs");
@@ -24,14 +22,14 @@ if (yargs.argv.p) {
 
 var config = {
   mode: mode,
-  entry: ["@babel/polyfill", __dirname + "/src/index.ts"],
+  entry: [__dirname + "/src/index.ts"],
   output: {
     path: path.join(__dirname, "/dist"),
     filename: outputFile,
     library: libraryName,
     libraryTarget: "umd",
     umdNamedDefine: true,
-    globalObject: "typeof self !== 'undefined' ? self : this"
+    globalObject: "typeof self !== 'undefined' ? self : this"##
   },
   module: {
     rules: [
