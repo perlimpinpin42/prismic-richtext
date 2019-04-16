@@ -29,25 +29,13 @@ var config = {
     library: libraryName,
     libraryTarget: "umd",
     umdNamedDefine: true,
-    globalObject: "typeof self !== 'undefined' ? self : this"##
+    globalObject: "typeof self !== 'undefined' ? self : this"
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
-        loader: "babel-loader",
-        options: {
-          presets: ["@babel/typescript"],
-          plugins: [
-            [
-              "@babel/plugin-transform-modules-commonjs",
-              {
-                allowTopLevelThis: true
-              }
-            ],
-            "ramda"
-          ]
-        }
+        loader: "awesome-typescript-loader"
       }
     ]
   },

@@ -7,5 +7,5 @@ module.exports = {
   asText,
   asTree: Tree.fromRichText,
   serialize: Serialize,
-  Elements: NODE_TYPES,
+  Elements: NODE_TYPES
 };
